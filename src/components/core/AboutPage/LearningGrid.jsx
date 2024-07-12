@@ -8,7 +8,7 @@ const LearningGridArray = [
     heading: "World-Class Learning for",
     highliteText: "Anyone, Anywhere",
     description:
-      "EduLearn partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+      "EduForte partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
     BtnText: "Learn More",
     BtnLink: "/",
   },
@@ -22,25 +22,25 @@ const LearningGridArray = [
     order: 2,
     heading: "Our Learning Methods",
     description:
-      "EduLearn partners with more than 275+ leading universities and companies to bring",
+      "EduForte partners with more than 275+ leading universities and companies to bring",
   },
   {
     order: 3,
     heading: "Certification",
     description:
-      "EduLearn partners with more than 275+ leading universities and companies to bring",
+      "EduForte partners with more than 275+ leading universities and companies to bring",
   },
   {
     order: 4,
     heading: `Rating "Auto-grading"`,
     description:
-      "EduLearn partners with more than 275+ leading universities and companies to bring",
+      "EduForte partners with more than 275+ leading universities and companies to bring",
   },
   {
     order: 5,
     heading: "Ready to Work",
     description:
-      "EduLearn partners with more than 275+ leading universities and companies to bring",
+      "EduForte partners with more than 275+ leading universities and companies to bring",
   },
 ];
 
