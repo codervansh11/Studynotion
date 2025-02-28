@@ -53,7 +53,7 @@ function Home() {
           <CTAButton active={false} linkto={"/login"}>
             Book a Demo
           </CTAButton>
-          <ExternalButton active={true} linkto={"www.google.com"}>
+          <ExternalButton active={true} linkto={"https://www.google.com/"}>
             Chat Us
           </ExternalButton>
         </div>
