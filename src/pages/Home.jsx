@@ -8,6 +8,7 @@ import Banner from "../assets/Images/banner.mp4"
 import Footer from "../components/Common/Footer"
 import ReviewSlider from "../components/Common/ReviewSlider"
 import CTAButton from "../components/core/HomePage/Button"
+import ExternalButton from "../components/core/HomePage/ExternalButton"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
 import ExploreMore from "../components/core/HomePage/ExploreMore"
 import HighlightText from "../components/core/HomePage/HighlightText"
@@ -52,9 +53,9 @@ function Home() {
           <CTAButton active={false} linkto={"/login"}>
             Book a Demo
           </CTAButton>
-          <CTAButton active={true} linkto={"www.google.com"}>
+          <ExternalButton active={true} linkto={"www.google.com"}>
             Chat Us
-          </CTAButton>
+          </ExternalButton>
         </div>
 
         {/* Video */}
