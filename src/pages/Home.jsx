@@ -52,6 +52,9 @@ function Home() {
           <CTAButton active={false} linkto={"/login"}>
             Book a Demo
           </CTAButton>
+          <CTAButton active={true} linkto={"www.google.com"}>
+            Chat Us
+          </CTAButton>
         </div>
 
         {/* Video */}
