@@ -53,7 +53,7 @@ function Home() {
           <CTAButton active={false} linkto={"/login"}>
             Book a Demo
           </CTAButton>
-          <ExternalButton active={true} linkto={"https://www.google.com/"}>
+          <ExternalButton active={true} linkto={"https://mern-chatbot-omega.vercel.app/"}>
             Chat Us
           </ExternalButton>
         </div>
