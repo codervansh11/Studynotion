@@ -41,17 +41,24 @@ function SignupForm() {
   const handleOnSubmit = (e) => {
     e.preventDefault()
 
+    // ✅ Gmail-only validation
+    const isValidGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)
+    if (!isValidGmail) {
+      toast.error("Enter a valid Gmail address")
+      return
+    }
+
     if (password !== confirmPassword) {
       toast.error("Passwords Do Not Match")
       return
     }
+
     const signupData = {
       ...formData,
       accountType,
     }
 
     // Setting signup data to state
-    // To be used after otp verification
     dispatch(setSignupData(signupData))
     // Send OTP to user for verification
     dispatch(sendOtp(formData.email, navigate))
