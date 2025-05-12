@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import { sendOtp } from "../../../services/operations/authAPI"
 import { setSignupData } from "../../../slices/authSlice"
@@ -188,6 +189,11 @@ function SignupForm() {
             </span>
           </label>
         </div>
+        <Link to="https://codervansh11.github.io/SafeKeyCraft/">
+          <p className="mt-1 ml-auto max-w-max text-xs text-blue-100">
+            Password Suggestor
+          </p>
+        </Link>
         <button
           type="submit"
           className="mt-6 rounded-[8px] bg-yellow-50 py-[8px] px-[12px] font-medium text-richblack-900"

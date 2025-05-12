@@ -25,9 +25,23 @@ function Navbar() {
       setLoading(true)
       try {
         const res = await apiConnector("GET", categories.CATEGORIES_API)
-        setSubLinks(res.data.data)
+
+        const staticCategories = [
+          { name: "Python", courses: [] },
+          { name: "Web Development", courses: [] },
+          { name: "Android Development", courses: [] },
+        ]
+
+        const apiCategories = Array.isArray(res?.data?.data) ? res.data.data : []
+        const allCategories = [...apiCategories, ...staticCategories]
+        setSubLinks(allCategories)
       } catch (error) {
         console.log("Could not fetch Categories.", error)
+        setSubLinks([
+          { name: "Python", courses: [] },
+          { name: "Web Development", courses: [] },
+          { name: "Android Development", courses: [] },
+        ])
       }
       setLoading(false)
     })()
@@ -68,18 +82,9 @@ function Navbar() {
                       <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                       {loading ? (
                         <p className="text-center">Loading...</p>
-                      ) : subLinks?.some(
-                          (subLink) =>
-                            Array.isArray(subLink?.courses) &&
-                            subLink.courses.length > 0
-                        ) ? (
-                        subLinks
-                          ?.filter(
-                            (subLink) =>
-                              Array.isArray(subLink?.courses) &&
-                              subLink.courses.length > 0
-                          )
-                          ?.map((subLink, i) => (
+                      ) : subLinks.length ? (
+                        <>
+                          {subLinks.map((subLink, i) => (
                             <Link
                               to={`/catalog/${subLink.name
                                 .split(" ")
@@ -90,9 +95,10 @@ function Navbar() {
                             >
                               <p>{subLink.name}</p>
                             </Link>
-                          ))
+                          ))}
+                        </>
                       ) : (
-                        <p className="text-center">No Courses Found</p>
+                        <p className="text-center">No Categories Found</p>
                       )}
                     </div>
                   </div>
@@ -143,7 +149,7 @@ function Navbar() {
           {token !== null && <ProfileDropdown />}
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger Menu */}
         <button className="mr-4 md:hidden">
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
         </button>

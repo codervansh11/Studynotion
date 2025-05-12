@@ -48,7 +48,7 @@ export default function Upload({
   }
 
   useEffect(() => {
-    register(name)
+    register(name, { required: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [register])
 
@@ -113,7 +113,11 @@ export default function Upload({
           </div>
         )}
       </div>
-      
+      {errors[name] && (
+        <span className="ml-2 text-xs tracking-wide text-pink-200">
+          {label} is required
+        </span>
+      )}
     </div>
   )
 }
